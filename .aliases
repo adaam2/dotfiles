@@ -1,1 +1,27 @@
-/home/adam/.dotfiles/aliases
+# vim: set filetype=bash: 
+
+# Shortcuts to configuration
+alias za="vim ~/.aliases"
+alias awesome="vim ~/.config/awesome"
+alias es="exec $SHELL"
+
+# Vim
+alias v="vim"
+alias vi="vim"
+
+# Shortcuts for git
+alias g="git"
+alias gs="git status"
+alias gco="git checkout"
+alias new-branch="git checkout -b"
+alias delete-branch="git branch -D"
+alias recent-branches="git branch --sort=-committerdate"
+
+# Rails specific
+alias be="bundle exec"
+
+# Docker
+alias dc="docker-compose"
+
+# Folders
+alias code="cd ~/Code"
