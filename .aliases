@@ -1,5 +1,12 @@
 # vim: set filetype=bash: 
 
+# Linux specific
+alias apt-get="sudo apt-get"
+alias apt="apt-get"
+
+# Listing files
+alias ls="ls -a"
+
 # Shortcuts to configuration
 alias za="vim ~/.aliases"
 alias awesome="vim ~/.config/awesome"
