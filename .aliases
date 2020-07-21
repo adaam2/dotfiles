@@ -4,6 +4,9 @@
 alias apt-get="sudo apt-get"
 alias apt="apt-get"
 
+# Exiting
+alias e="exit"
+
 # Listing files
 alias ls="ls -a"
 
