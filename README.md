@@ -1,3 +1,6 @@
+:nail_care:
+:construction_worker:	
+-
 My dotfiles including configurations for vim, awesomewm, tmux, alacritty, cov nvim
 
 # Screenshots
