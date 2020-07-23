@@ -1,6 +1,7 @@
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'chiel92/vim-autoformat'
+Plug 'gko/vim-coloresque'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'roman/golden-ratio'
@@ -33,7 +34,7 @@ set splitright
 set splitbelow
 
 " Paste / clipboard
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " Cursorline
 set cursorline
@@ -54,9 +55,6 @@ set rnu
 " Tab / untab in v-block mode
 vmap <Tab> >gv
 vmap <S-Tab> <gv
-
-set mouse=a   " Enable mouse
-set mousehide " Hide mouse cursor while typing
 
 " Leader key config
 let mapleader=","
@@ -127,9 +125,9 @@ xmap <leader><tab> <Plug>(fzf-maps-x)
 " Use ctrl + p to filter all project files fuzzily
 nnoremap <C-p> :FZF<CR>
 nnoremap <C-f> :Ag<CR>
-command! -bang -nargs=* Ag
-      \ call fzf#vim#ag(<q-args>,
-      \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-      \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-      \                 <bang>0)
+"command! -bang -nargs=* Ag
+      "\ call fzf#vim#ag(<q-args>,
+      "\                 <bang>0 ? fzf#vim#with_preview('up:60%')
+      "\                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+      "\                 <bang>0)
 
