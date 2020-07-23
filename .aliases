@@ -3,12 +3,14 @@
 # Linux specific
 alias apt-get="sudo apt-get"
 alias apt="apt-get"
+alias ap="apt-get"
 
 # Exiting
 alias e="exit"
 
 # Listing files
-alias ls="ls -la --color=auto"
+#alias ls="ls -la --color=auto"
+alias ls="exa -1 --icons --colour always -a --sort name --group-directories-first"
 
 # Shortcuts to configuration
 alias za="vim ~/.aliases"
