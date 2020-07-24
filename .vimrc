@@ -6,6 +6,11 @@ Plug 'gko/vim-coloresque'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'roman/golden-ratio'
+Plug 'danishprakash/vim-githubinator'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'janko/vim-test'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -80,7 +85,6 @@ nnoremap <C-Z> u
 nnoremap <C-Y> <C-R>
 
 " For insert mode, you still need to run a normal mode command. You can include <Esc> in mappings to leave insert mode, but in this case you can also use <C-O> to run a single normal mode command while remaining in insert mode (See :help i_CTRL-O):
-
 inoremap <C-Z> <C-O>u
 inoremap <C-Y> <C-O><C-R>
 
@@ -106,7 +110,6 @@ let NERDCreateDefaultMappings = 0
 " Map toggle comment
 map <silent><Leader>c<space> <Plug>NERDCommenterToggle
 
-" Indent Guides {{{
 " Enable guides on vim startup
 let g:indent_guides_enable_on_vim_startup = 1
 " Set guides size to be slim
@@ -115,9 +118,8 @@ let g:indent_guides_guide_size = 1
 let g:indent_guides_exclude_filetypes = ['help']
 " Disable indent guides mapping
 let g:indent_guides_default_mapping = 0
-" }}}
 
-" FZF {{{
+" FZF
 set rtp+=/usr/local/opt/fzf
 nmap <leader><tab> <Plug>(fzf-maps-n)
 imap <leader><tab> <Plug>(fzf-maps-i)
@@ -126,9 +128,68 @@ xmap <leader><tab> <Plug>(fzf-maps-x)
 " Use ctrl + p to filter all project files fuzzily
 nnoremap <C-p> :FZF<CR>
 nnoremap <C-f> :Ag<CR>
-"command! -bang -nargs=* Ag
-      "\ call fzf#vim#ag(<q-args>,
-      "\                 <bang>0 ? fzf#vim#with_preview('up:60%')
-      "\                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-      "\                 <bang>0)
 
+" Airline config
+let g:airline_powerline_fonts = 0
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#fugutive#enabled = 1
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#coc#enabled = 1
+let g:airline#extensions#bufferline#enabled = 0
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
+" Coc neo vim configuration
+" use <tab> for trigger completion and navigate to next complete item
+function! s:check_back_space() abort
+let col = col('.') - 1
+return !col || getline('.')[col - 1] =~ '\s'
+endfunction
+ 
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+ 
+" Next by Tab
+inoremap <silent><expr> <TAB>
+\ pumvisible() ? "\<C-n>" :
+\ <SID>check_back_space() ? "\<TAB>" :
+\ coc#rpc#request('doKeymap', ['snippets-expand', "\<TAB>"])
+ 
+" Previous by Tab
+inoremap <silent><expr><S-Tab>
+\ pumvisible() ? "\<C-p>" :
+\<SID>check_back_space() ? "\<S-Tab>" :
+\ coc#rpc#request('doKeymap', ['snippets-expand', "\<S-Tab>"])
+ 
+" use <c-space>for trigger completion
+imap <expr><c-space> coc#refresh()
+ 
+" Don't go to new line on enter when completing
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+ 
+" Use <C-l> to trigger snippet expand.
+imap <C-l> <Plug>(coc-snippets-expand)
+ 
+" Use <C-j> to select text for visual text of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+ 
+" Show doc
+function! s:show_doc()
+if &filetype == 'vim'
+execute 'h ' . expand('<cword>')
+else
+call CocAction('doHover')
+endif
+endfunction
+nnoremap <silent> K :call <SID>show_doc()<CR>
+ 
+" GoTos
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+ 
+" Other helpful stuff
+nnoremap <silent><leader>gc :call CocAction('codeAction')<CR>
+nnoremap <silent><leader>gr :call CocAction('rename')<CR>
+nnoremap <silent><leader>gq :call CocAction('quickfixes')<CR>
+nnoremap <silent><leader>gh :CocList<CR>
