@@ -27,4 +27,4 @@ The prefix key for tmux commands is ` (backtick)
 - *Search in project files* = Ctrl + f
 - *Search by file name* = Ctrl + p
 - *Toggle commenting of code* = Leader + c + space
-- *Open current line on Github* = Leader + g + c + o
+- *Open current line on Github* = Leader + g + h + o
