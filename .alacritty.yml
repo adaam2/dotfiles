@@ -5,7 +5,7 @@ shell:
     - -c
     - "tmux ls && read tmux_session && tmux attach -t ${tmux_session:-default} || tmux new -s ${tmux_session:-default}"
 window:
-  startup_mode: Fullscreen
+  startup_mode: Maximized
 scrolling:
   history: 10000
   multiplier: 3
