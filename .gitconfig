@@ -2,6 +2,7 @@
 	email = adamjamesbull@googlemail.com
 	name = Adam Bull
 [core]
+  pager = less
 	editor = vim
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = ~/.gitignore
@@ -25,4 +26,6 @@
 	added = green bold
 	changed = yellow bold
 	untracked = red bold
-
+[pager]
+  diff = true
+  status = true
