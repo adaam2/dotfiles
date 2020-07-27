@@ -23,6 +23,8 @@ alias vi="vim"
 
 # Shortcuts for git
 alias g="git"
+alias st="git status"
+alias status="git status"
 alias gs="git status"
 alias gco="git checkout"
 alias new-branch="git checkout -b"
