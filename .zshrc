@@ -71,8 +71,8 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-export FZF_DEFAULT_COMMAND='ag --color -o -Q --column -S -A -B --literal -w'
-#export FZF_DEFAULT_COMMAND='ag --no-color --ignore node_modules --ignore vendor --ignore s3-outputs -g ""'
+#export FZF_DEFAULT_COMMAND='ag --color -o -Q --column -S -A -B --literal -w'
+export FZF_DEFAULT_COMMAND='ag --no-color --ignore node_modules --ignore vendor --ignore s3-outputs -g ""'
 #export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 export VISUAL=/usr/bin/vim
 export EDITOR=/usr/bin/vim
