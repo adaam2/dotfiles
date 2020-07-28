@@ -5,6 +5,8 @@ alias apt-get="sudo apt-get"
 alias apt="apt-get"
 alias ap="apt-get"
 
+alias h="cd ~/"
+
 # Exiting
 alias e="exit"
 
