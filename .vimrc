@@ -140,53 +140,53 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 " Coc neo vim configuration
 " use <tab> for trigger completion and navigate to next complete item
 function! s:check_back_space() abort
-let col = col('.') - 1
-return !col || getline('.')[col - 1] =~ '\s'
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1] =~ '\s'
 endfunction
- 
+
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
- 
+
 " Next by Tab
 inoremap <silent><expr> <TAB>
-\ pumvisible() ? "\<C-n>" :
-\ <SID>check_back_space() ? "\<TAB>" :
-\ coc#rpc#request('doKeymap', ['snippets-expand', "\<TAB>"])
- 
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#rpc#request('doKeymap', ['snippets-expand', "\<TAB>"])
+
 " Previous by Tab
 inoremap <silent><expr><S-Tab>
-\ pumvisible() ? "\<C-p>" :
-\<SID>check_back_space() ? "\<S-Tab>" :
-\ coc#rpc#request('doKeymap', ['snippets-expand', "\<S-Tab>"])
- 
+      \ pumvisible() ? "\<C-p>" :
+      \<SID>check_back_space() ? "\<S-Tab>" :
+      \ coc#rpc#request('doKeymap', ['snippets-expand', "\<S-Tab>"])
+
 " use <c-space>for trigger completion
 imap <expr><c-space> coc#refresh()
- 
+
 " Don't go to new line on enter when completing
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
- 
+
 " Use <C-l> to trigger snippet expand.
 imap <C-l> <Plug>(coc-snippets-expand)
- 
+
 " Use <C-j> to select text for visual text of snippet.
 vmap <C-j> <Plug>(coc-snippets-select)
- 
+
 " Show doc
 function! s:show_doc()
-if &filetype == 'vim'
-execute 'h ' . expand('<cword>')
-else
-call CocAction('doHover')
-endif
+  if &filetype == 'vim'
+    execute 'h ' . expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
 endfunction
 nnoremap <silent> K :call <SID>show_doc()<CR>
- 
+
 " GoTos
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
- 
+
 " Other helpful stuff
 nnoremap <silent><leader>gc :call CocAction('codeAction')<CR>
 nnoremap <silent><leader>gr :call CocAction('rename')<CR>
@@ -203,7 +203,7 @@ let test#go#runner = 'richgo'
 let g:test#preserve_screen = 1
 let test#strategy = "vimterminal"
 let g:test#javascript#jest#file_pattern = '*.(spec|test))\.(js|jsx|coffee|ts|tsx)$'
- 
+
 nnoremap <leader>tt :TestNearest<cr>
 nnoremap <leader>tf :TestFile<cr>
 nnoremap <leader>ta :TestSuite<cr>
