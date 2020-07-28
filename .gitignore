@@ -1,2 +1,5 @@
 .vim/view
 .vim/plugged
+
+.config/coc/history.json
+.config/coc/extensions/db.json
