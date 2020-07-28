@@ -23,7 +23,6 @@ set nocompatible
 syntax on
 filetype plugin indent on
 set autoread
-set lazyredraw
 
 " Indentation
 set cindent
@@ -193,3 +192,20 @@ nnoremap <silent><leader>gc :call CocAction('codeAction')<CR>
 nnoremap <silent><leader>gr :call CocAction('rename')<CR>
 nnoremap <silent><leader>gq :call CocAction('quickfixes')<CR>
 nnoremap <silent><leader>gh :CocList<CR>
+
+let test#go#richgo#options = '--mod=vendor'
+let test#ruby#rspec#options = {
+      \ 'nearest': '--backtrace',
+      \ 'file':    '--format documentation',
+      \ 'suite':   '',
+      \}
+let test#go#runner = 'richgo'
+let g:test#preserve_screen = 1
+let test#strategy = "vimterminal"
+let g:test#javascript#jest#file_pattern = '*.(spec|test))\.(js|jsx|coffee|ts|tsx)$'
+ 
+nnoremap <leader>tt :TestNearest<cr>
+nnoremap <leader>tf :TestFile<cr>
+nnoremap <leader>ta :TestSuite<cr>
+nnoremap <leader>tl :TestLast<cr>
+nnoremap <leader>tg :TestVisit<cr>
