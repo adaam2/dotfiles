@@ -1,4 +1,9 @@
 {
   "prettier.eslintIntegration": true,
-  "coc.preferences.formatOnSaveFiletypes": ["typescript", "javascript", "ruby", "typescriptreact"]
+  "coc.preferences.formatOnSaveFiletypes": ["typescript", "javascript", "ruby", "typescriptreact"],
+  "coc.preferences.timeout": 100,
+  "suggest.noselect": false,
+  "suggest.enablePreview": true,
+  "suggest.removeDuplicateItems": true,
+  "codeLens.enable": true
 }
