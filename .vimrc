@@ -186,11 +186,12 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gq <Plug>(coc-codeaction)
 
 " Other helpful stuff
 nnoremap <silent><leader>gc :call CocAction('codeAction')<CR>
 nnoremap <silent><leader>gr :call CocAction('rename')<CR>
-nnoremap <silent><leader>gq :call CocAction('quickfixes')<CR>
+"nnoremap <silent><leader>gq :call CocAction('quickfixes')<CR>
 nnoremap <silent><leader>gh :CocList<CR>
 
 let test#go#richgo#options = '--mod=vendor'
