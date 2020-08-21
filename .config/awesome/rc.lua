@@ -101,8 +101,8 @@ awful.util.terminal = terminal
 awful.util.tagnames = { "dev", "internets" }
 awful.layout.layouts = {
   --awful.layout.suit.floating,
-  awful.layout.suit.max,
-  awful.layout.suit.max.fullscreen,
+ -- awful.layout.suit.max,
+--  awful.layout.suit.max.fullscreen,
   awful.layout.suit.tile,
   awful.layout.suit.tile.left,
   awful.layout.suit.tile.bottom,
@@ -454,18 +454,19 @@ function ()
   beautiful.volume.update()
 end,
 {description = "volume down", group = "hotkeys"}),
+--awful.key({ altkey }, "m",
+--function ()
+  --os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
+  --beautiful.volume.update()
+--end,
+--{description = "toggle mute", group = "hotkeys"}),
 awful.key({ altkey }, "m",
 function ()
-  os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
+  os.execute("amixer -D pulse set Master toggle")
+  --os.execute(string.format("amixer -q set %s 100%", beautiful.volume.channel))
   beautiful.volume.update()
 end,
-{description = "toggle mute", group = "hotkeys"}),
-awful.key({ altkey, "Control" }, "m",
-function ()
-  os.execute(string.format("amixer -q set %s 100%%", beautiful.volume.channel))
-  beautiful.volume.update()
-end,
-{description = "volume 100%", group = "hotkeys"}),
+{description = "Toggle mute 100%", group = "hotkeys"}),
 awful.key({ altkey, "Control" }, "0",
 function ()
   os.execute(string.format("amixer -q set %s 0%%", beautiful.volume.channel))
