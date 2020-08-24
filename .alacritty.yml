@@ -102,8 +102,8 @@ selection:
   save_to_clipboard: false
 dynamic_title: true
 cursor:
-  style: Underline
-  vi_mode_style: Underline
+  style: Block
+  vi_mode_style: Block
   unfocused_hollow: true
 
 # Send ESC (\x1b) before characters when alt is pressed.
