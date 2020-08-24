@@ -5,6 +5,7 @@ alias apt-get="sudo apt-get"
 alias apt="apt-get"
 alias ap="apt-get"
 
+alias volume-100="amixer -D pulse set Master toggle"
 alias h="cd ~/"
 
 # Exiting
@@ -20,8 +21,8 @@ alias awesome="vim ~/.config/awesome"
 alias es="exec $SHELL"
 
 # Vim
-alias v="vim"
-alias vi="vim"
+alias v="nvim"
+alias vi="nvim"
 
 # Shortcuts for git
 alias g="git"
