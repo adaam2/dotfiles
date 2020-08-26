@@ -23,6 +23,7 @@ alias es="exec $SHELL"
 # Vim
 alias v="nvim"
 alias vi="nvim"
+alias vim="nvim"
 
 # Shortcuts for git
 alias g="git"
