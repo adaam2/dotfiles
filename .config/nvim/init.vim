@@ -1,5 +1,5 @@
 " Plugins
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 Plug 'sheerun/vim-polyglot'
 Plug 'chiel92/vim-autoformat'
 "Plug 'gko/vim-coloresque'
