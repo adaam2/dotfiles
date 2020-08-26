@@ -1,7 +1,7 @@
 :nail_care:
 :construction_worker:	
 -
-My dotfiles including configurations for vim, awesomewm, tmux, alacritty, cov nvim
+My dotfiles including configurations for neovim, awesome window manager, tmux, alacritty, coc.nvim (completions).
 
 # Screenshots
 
@@ -13,11 +13,13 @@ My dotfiles including configurations for vim, awesomewm, tmux, alacritty, cov nv
 
 The prefix key for tmux commands is ` (backtick)
 
-### Splits
+### Splits / windows
 
 - *Split vertically* = Backtick + dash
 - *Split horizontally* = Backtick + backslash
 - *Kill pane* = Backtick + x
+- *Convert pane to window* = Backtick + !
+- *Next window* = Backtick + n
 
 ## Vim
 
