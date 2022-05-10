@@ -1,0 +1,1 @@
+/Users/adambull/.config/vim/.vimrc
